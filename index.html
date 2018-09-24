@@ -8,21 +8,22 @@
 <meta name="Description" content="潇洒人生·悟" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
-<meta name="viewport" content="initial-scale=0.8, maximum-scale=0.8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="baidu-tc-cerfication" content="60118df09f39ffdb1c664af77870266b" />
 <title>潇洒人生·悟</title>
 <style>
     body      { margin:0px; padding:0px; font:12px '宋体,arial';text-align:center; color:#fff;background:#fff;}
-    a         { color:#ccc;   outline: none;  text-decoration:none;}
-    a:link,a:actived,a:hover,a:visited { color:#ccc;}
-    #thinking { display:block; width:245px; height:319px; margin:auto;margin-top:3rem;background:url(assets/images/2012.png) no-repeat; overflow:hidden; text-indent:-999px;
+    a         { color: #ccc;   outline: none;  text-decoration:none;}
+    a:link,a:actived,a:hover,a:visited { color: #ccc; }
+    #thinking { display:block; width:250px; height:344px; margin:auto;margin-top:3rem;background:url(assets/images/realize.png) no-repeat; overflow:hidden; text-indent:-999px;
     }
 </style>
 </head>
 <script>
-    var $ = function(s){
+    function $(s){
         return typeof s === 'string' ? document.getElementById(s) : s;
-    };
+    }
+
     function toggle(el, content, s1, s2) {
         var cur = $(el);
         var c=$(content);
@@ -67,22 +68,18 @@
         ];
         var curTip = arrTips[Math.floor(Math.random(new Date().getSeconds()) * arrTips.length)];
         alert(curTip);
-    };
+    }
 
+    window.onload = function() {
+        setTimeout(showTips, 10000);
+    };
 </script>
 <body>
-    <!-- ClickTale Top part -->
-    <script type="text/javascript">
-        var WRInitTime=(new Date()).getTime();
-    </script>
-    <!-- ClickTale end of Top part -->
-
-    <a href="http://about.me/xs" onclick="return showTips();" id="thinking" hidefocus="true" onfocus="blur()">潇洒人生</a>
-
+    <a href="http://about.me/xs" id="thinking" hidefocus="true" onfocus="blur()">潇洒人生</a>
     <a href="#" title="二维码|QR-Code" onclick="toggle(this, 'bcode', '&oplus;', '&darr;');return false;" style="font-size:18px;margin:5px;">&oplus;</a>
     <div id="bcode" style="display: none">
-        <div style="margin-top: 20px"><img alt="潇洒人生" src="assets/images/avatars/wechat.png" border="0" /></div>
-        <div style="color: #999">♪嘀～ 欢迎加微信哟!!</div>
+        <div style="margin-top: 20px"><img alt="潇洒人生" src="assets/images/wechat.png" border="0" /></div>
+        <div style="color: #ccc">♪嘀～ 扫码加微信。</div>
     </div>
 
     <script type="text/javascript">
@@ -94,14 +91,7 @@
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();</script><!-- ClickTale Bottom part -->
-    <div id="ClickTaleDiv" style="display: none"></div>
-    <script type="text/javascript">
-        if(document.location.protocol!='https:')
-          document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRc3.js'%20type='text/javascript'%3E%3C/script%3E"));
-        </script>
-    <script type="text/javascript">
-        if(typeof ClickTale=='function') ClickTale(44598,1,"www");
-        </script> <!-- ClickTale end of Bottom part -->
+      })();
+  </script>
 </body>
 </html>
