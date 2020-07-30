@@ -21,14 +21,14 @@
 </head>
 <script>
     function $(s){
-        return typeof s === 'string' ? document.getElementById(s) : s;
+        return typeof s === 'string' ? document.getElementById(s) : s
     }
 
     function toggle(el, content, s1, s2) {
-        var cur = $(el);
-        var c=$(content);
+        var cur = $(el)
+        var c=$(content)
         cur.innerHTML=(cur.innerHTML === s1?s2:s1);
-        c.style.display=(c.style.display==='none'?'block':'none');
+        c.style.display=(c.style.display==='none'?'block':'none')
     }
 
     function showTips(){
@@ -66,16 +66,17 @@
             '值得做的事情，就值得做到最好',
             '失败不是世界上最糟糕的事情，不尝试才是'
         ];
-        var curTip = arrTips[Math.floor(Math.random(new Date().getSeconds()) * arrTips.length)];
-        alert(curTip);
+        var curTip = arrTips[Math.floor(Math.random(new Date().getSeconds()) * arrTips.length)]
+        alert(curTip)
+        location.href = $('thinking').href
     }
 
     window.onload = function() {
-        setTimeout(showTips, 10000);
+        setTimeout(showTips, 8000)
     };
 </script>
 <body>
-    <a href="http://about.me/xs" id="thinking" hidefocus="true" onfocus="blur()">潇洒人生</a>
+    <a href="https://www.notion.so/petertuo/Peter-Tuo-6e9c219e071c41f48979bac01d439c47" id="thinking" hidefocus="true" onfocus="blur()">Peter Tuo</a>
     <a href="#" title="二维码|QR-Code" onclick="toggle(this, 'bcode', '&oplus;', '&darr;');return false;" style="font-size:18px;margin:5px;">&oplus;</a>
     <div id="bcode" style="display: none">
         <div style="margin-top: 20px"><img alt="潇洒人生" src="assets/images/wechat.png" border="0" /></div>
