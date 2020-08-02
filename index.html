@@ -4,41 +4,36 @@
 <meta charset="utf-8">
 <meta id="robots" content="all" />
 <meta id="author" content="PeterTuo" />
-<meta name="Keywords" content="HTML5,Javascript,Game" />
-<meta name="Description" content="潇洒人生·悟" />
+<meta name="Keywords" content="Apple, Mac, Apps, 果粉" />
+<meta name="Description" content="潇洒人生|悟|陀振华|PeterTuo|技术宅，果粉。" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="baidu-tc-cerfication" content="60118df09f39ffdb1c664af77870266b" />
 <title>潇洒人生·悟</title>
 <style>
-    body      { margin:0px; padding:0px; font:12px '宋体,arial';text-align:center; color:#fff;background:#fff;}
-    a         { color: #ccc;   outline: none;  text-decoration:none;}
-    a:link,a:actived,a:hover,a:visited { color: #ccc; }
-    #thinking { display:block; width:250px; height:344px; margin:auto;margin-top:3rem;background:url(assets/images/realize.png) no-repeat; overflow:hidden; text-indent:-999px;
-    }
+    body { margin:0px; padding:0px; font:12px '宋体,arial';text-align:center; color:#fff;background:#fff; }
+    a { color: #ccc; outline: none; text-decoration:none; }
+    a:link, a:actived, a:hover,a:visited { color: #ccc; }
+    #thinking { display:block; width:250px; height:344px; margin:auto;margin-top:3rem;background:url(assets/images/realize.png) no-repeat; overflow:hidden; text-indent:-999px; }
 </style>
 </head>
 <script>
     function $(s){
         return typeof s === 'string' ? document.getElementById(s) : s
     }
-
     function toggle(el, content, s1, s2) {
         var cur = $(el)
         var c=$(content)
         cur.innerHTML=(cur.innerHTML === s1?s2:s1);
         c.style.display=(c.style.display==='none'?'block':'none')
     }
-
     function showTips(){
         var arrTips = [
             '如果你不忙着求生，你就在忙着求死。',
-            '只有那些疯狂到以为自己能够改变世界的人.....才能真正改变世界。',
+            '只有那些疯狂到以为自己能够改变世界的人…… 才能真正改变世界。',
             '简约、减少分心的因素，是一家商店成功的关键，对于产品来说也是一样。',
-            '记住自己很快就要死了.....你已是一无所有，没理由不追随内心！',
             '要成为尝百草的人，然后你就能百毒不侵了，这是对人生和意志的一种磨练！',
-            '—— 忙碌是一种幸福，让我们没时间体会痛苦，奔波是一种快乐，让我们真实的感受生活，疲惫是一种享受，让我们无暇空虚。',
+            '忙碌是一种幸福，让我们没时间体会痛苦，奔波是一种快乐，让我们真实的感受生活，疲惫是一种享受，让我们无暇空虚。',
             '幸福就是：有人爱，有事做，有期待……',
             '潇洒是自然、独韵的境界，是对待生命诚挚的态度！',
             '不是因为有些事情难以做到，我们才失去信心，而是我们失去了信心，有些事才显得难以做到！',
@@ -51,7 +46,6 @@
             '失去金钱的人损失甚少，失去健康的人损失极多，失去勇气的人损失一切！',
             '把自己当主角的人，走哪都不缺舞台。',
             '成熟的人不问过去，聪明的人不问现在，豁达的人不问未来。',
-            '等待雨....是傘一生的宿命。',
             '不要用一个碗去盛一粒米。',
             '我想让它尽可能的漂亮，即使它藏在盒子内，一位优秀的木匠是不会在橱柜的后背上使用烂木头的，即使没有一个人会看见它。',
             '只要需要，就直接去做，然后就成了。',
@@ -62,18 +56,21 @@
             '知识就像内裤，看不见，却很重要！',
             '时间就像卷笔刀，我们都是铅笔。有的卷断了芯，有的削尖了头，有的花边很漂亮。社会地位最高的是一种叫2B的笔，只有他们能做选择题...',
             '珍惜一袋米，还不如去多开垦一块地来得实在！',
-            '当你眼里只有一个方向，全世界都会为你让路',
-            '值得做的事情，就值得做到最好',
-            '失败不是世界上最糟糕的事情，不尝试才是'
+            '当你眼里只有一个方向，全世界都会为你让路。',
+            '值得做的事情，就值得做到最好。',
+            '失败不是世界上最糟糕的事情，不尝试才是。'
         ];
         var curTip = arrTips[Math.floor(Math.random(new Date().getSeconds()) * arrTips.length)]
-        alert(curTip)
-        location.href = $('thinking').href
+        var go = confirm('私藏金句赠有缘人：\n\n' + curTip)
+        if (go) location.href = $('thinking').href
     }
-
     window.onload = function() {
-        setTimeout(showTips, 8000)
-    };
+        if (location.search === '?apps') {
+           location.href = 'https://www.notion.so/8aeb5faac45748cd832ad379e3b30eb1?v=b5e1e571d2e34fce9aa8e7555002a039'
+        } else {
+            setTimeout(showTips, 8000)
+        }
+    }
 </script>
 <body>
     <a href="https://www.notion.so/petertuo/Peter-Tuo-6e9c219e071c41f48979bac01d439c47" id="thinking" hidefocus="true" onfocus="blur()">Peter Tuo</a>
@@ -82,17 +79,16 @@
         <div style="margin-top: 20px"><img alt="潇洒人生" src="assets/images/wechat.png" border="0" /></div>
         <div style="color: #ccc">♪嘀～ 扫码加微信。</div>
     </div>
-
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-7423189-5']);
-      _gaq.push(['_setDomainName', 'xsa.me']);
-      _gaq.push(['_trackPageview']);
-      (function() {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-7423189-5']);
+        _gaq.push(['_setDomainName', 'xsa.me']);
+        _gaq.push(['_trackPageview']);
+        (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-  </script>
+        })();
+    </script>
 </body>
 </html>
