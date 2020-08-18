@@ -4,37 +4,37 @@
 <meta charset="utf-8">
 <meta id="robots" content="all" />
 <meta id="author" content="PeterTuo" />
-<meta name="Keywords" content="Apple, Mac, Apps, 果粉" />
-<meta name="Description" content="潇洒人生|悟|陀振华|PeterTuo|技术宅，果粉。" />
+<meta name="Keywords" content="Apple,Mac,Apps,技术宅,果粉" />
+<meta name="Description" content="陀振华|PeterTuo|悟|技术宅|果粉" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>潇洒人生·悟</title>
+<title>PeterTuo · 悟</title>
 <style>
     body { margin:0px; padding:0px; font:12px '宋体,arial';text-align:center; color:#fff;background:#fff; }
     a { color: #ccc; outline: none; text-decoration:none; }
     a:link, a:actived, a:hover,a:visited { color: #ccc; }
     #thinking { display:block; width:250px; height:344px; margin:auto;margin-top:3rem;background:url(assets/images/realize.png) no-repeat; overflow:hidden; text-indent:-999px; }
+    #tips { background: #ffe; color: #a74; width: 50%; padding: 1rem; margin: 1rem auto; overflow: hidden; border: 1px solid #eed; border-radius: 5px; }
 </style>
 </head>
 <script>
-    function $(s){
-        return typeof s === 'string' ? document.getElementById(s) : s
+    var count = 0
+    var limit = rnd(3)
+    function rnd(n) {
+        return Math.floor(Math.random() * n) + 1
     }
-    function toggle(el, content, s1, s2) {
-        var cur = $(el)
-        var c=$(content)
-        cur.innerHTML=(cur.innerHTML === s1?s2:s1);
-        c.style.display=(c.style.display==='none'?'block':'none')
+    function $(s){
+        return document.getElementById(s)
     }
     function showTips(){
         var arrTips = [
-            '如果你不忙着求生，你就在忙着求死。',
-            '只有那些疯狂到以为自己能够改变世界的人…… 才能真正改变世界。',
+            '如果你不忙着求生，你就在忙着等死。',
+            '只有那些疯狂到以为自己能够改变世界的人才能真正改变世界。',
             '简约、减少分心的因素，是一家商店成功的关键，对于产品来说也是一样。',
             '要成为尝百草的人，然后你就能百毒不侵了，这是对人生和意志的一种磨练！',
             '忙碌是一种幸福，让我们没时间体会痛苦，奔波是一种快乐，让我们真实的感受生活，疲惫是一种享受，让我们无暇空虚。',
-            '幸福就是：有人爱，有事做，有期待……',
+            '幸福就是有人爱，有事做，有期待。',
             '潇洒是自然、独韵的境界，是对待生命诚挚的态度！',
             '不是因为有些事情难以做到，我们才失去信心，而是我们失去了信心，有些事才显得难以做到！',
             '积极的人在每一次忧患中都看到一个机会，而消极的人则在每个机会都看到某种忧患。',
@@ -59,26 +59,27 @@
             '当你眼里只有一个方向，全世界都会为你让路。',
             '值得做的事情，就值得做到最好。',
             '失败不是世界上最糟糕的事情，不尝试才是。'
-        ];
+        ]
         var curTip = arrTips[Math.floor(Math.random(new Date().getSeconds()) * arrTips.length)]
-        var go = confirm('私藏金句赠有缘人：\n\n' + curTip)
-        if (go) location.href = $('thinking').href
+        if (++count <= limit) {
+            $('tips').innerHTML = curTip
+            setTimeout(showTips, (3000 + curTip.length * 100 + rnd(5000)))
+        } else {
+            $('tips').innerHTML = 'Loading...'
+            $('thinking').click()
+        }
     }
     window.onload = function() {
-        if (location.search === '?apps') {
+        if (location.search.indexOf('?apps') === 0) {
            location.href = 'https://www.notion.so/8aeb5faac45748cd832ad379e3b30eb1?v=b5e1e571d2e34fce9aa8e7555002a039'
         } else {
-            setTimeout(showTips, 8000)
+            showTips()
         }
     }
 </script>
 <body>
     <a href="https://www.notion.so/petertuo/Peter-Tuo-6e9c219e071c41f48979bac01d439c47" id="thinking" hidefocus="true" onfocus="blur()">Peter Tuo</a>
-    <a href="#" title="二维码|QR-Code" onclick="toggle(this, 'bcode', '&oplus;', '&darr;');return false;" style="font-size:18px;margin:5px;">&oplus;</a>
-    <div id="bcode" style="display: none">
-        <div style="margin-top: 20px"><img alt="潇洒人生" src="assets/images/wechat.png" border="0" /></div>
-        <div style="color: #ccc">♪嘀～ 扫码加微信。</div>
-    </div>
+    <div id="tips">Loading...</div>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-7423189-5']);
