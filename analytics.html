@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>notion analytics page</title>
-</head>
-<body style="background:white;">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpetertuo.notion.site&count_bg=%2379C83D&title_bg=%23000000&icon=notion.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false" />
-</body>
+    <style>
+      body {
+        background: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let title_bg = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "999999"
+        : "000000";
+      let counterUrl = `https://xhits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpetertuo.notion.site&count_bg=%2379C83D&title_bg=%23${title_bg}&icon=notion.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false`;
+      document.write(`<img src="${counterUrl}" onerror="this.onerror = null;this.src =
+          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII='" />`);
+    </script>
+  </body>
 </html>
