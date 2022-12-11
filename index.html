@@ -27,13 +27,14 @@
             color: #fff;
             outline: none;
             text-decoration: none;
+            font-size: large;
             font-family: "Helvetica";
             font-weight: bold;
         }
 
         a:link,
         a:visited {
-            color: #fff;
+            color: #ff006a;
         }
 
         a:hover,
@@ -63,7 +64,9 @@
         #nav {
             padding: 0.1rem;
             margin: 0 auto;
-            background: #ff006a;
+            background: #000;
+            padding: 0.5rem 0;
+            margin: 1rem 0;
         }
 
         #nav a {
@@ -111,7 +114,7 @@
             home: 'https://petertuo.notion.site/',
             about: 'https://petertuo.notion.site/About-e445f977c95c4a0b82606b24897a74a0',
             apps: 'https://petertuo.notion.site/Apps-38b3bfc3e5ef42ac889e1c5f5d645f20',
-            timegoes: 'https://petertuo.notion.site/33f3e00685af40efac4a3e9f236b7cb9'
+            timegoes: 'https://petertuo.notion.site/c7c11c5c4ef34c51b973563a4a99f0ce'
         }
         function rnd(n) {
             return Math.floor(Math.random(new Date().getSeconds()) * n)
@@ -153,7 +156,9 @@
 <body>
     <a href="?home" id="thinking" hidefocus="true" onfocus="blur()">Peter Tuo</a>
     <div id="nav">
-        <a href="?about">About</a> <a href="?apps">Apps</a>
+        <a href="?about">About</a> 
+        <a href="?apps">Apps</a>
+        <a href="?timegoes">时流记</a>
     </div>
     <div id="tips">Loading...</div>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7423189-5"></script>
