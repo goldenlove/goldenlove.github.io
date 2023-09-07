@@ -1,5 +1,5 @@
 
 # 陀振华 ZenverTao
 
-* 技术宅 果粉 科技白日梦患者
+* 伪果粉  未来科技幻想家
 * [https://xsa.vercel.app](https://xsa.vercel.app)
