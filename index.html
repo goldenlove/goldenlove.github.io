@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>陀振华 · Zenver Tao</title>
     <meta charset="utf-8">
     <meta id="robots" content="all" />
     <meta id="author" content="Zenver Tao" />
-    <meta name="Keywords" content="未来,科技,产品,体验,技术宅,果粉,App,iOS,macOS,Notion" />
+    <meta name="Keywords" content="科技,产品,体验,AI,App,iOS,macOS,Notion" />
     <meta name="Description" content="伪果粉  未来科技幻想家" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
@@ -39,7 +40,7 @@
 
         a:hover,
         a:active {
-            color: #00ff01;
+            color: #00dd01;
         }
 
         #thinking {
@@ -55,16 +56,14 @@
         }
 
         #tips {
-            color: #aaa;
-            padding: 0.5rem;
-            margin: 0.1rem auto;
-            overflow: hidden;
+            color: #fff;
+            padding: 1rem;
+            background: #000;
         }
 
         #nav {
             padding: 0.1rem;
             margin: 0 auto;
-            background: #000;
             padding: 0.5rem 0;
             margin: 1rem 0;
         }
@@ -75,7 +74,7 @@
     </style>
 </head>
 <script>
-    (function () {
+    (function() {
         var count = 0
         var limit = rnd(3) + 1
         var quotes = [
@@ -116,25 +115,31 @@
             apps: 'https://zenver.notion.site/My-Picks-App-38b3bfc3e5ef42ac889e1c5f5d645f20',
             timegoes: 'https://zenver.notion.site/c7c11c5c4ef34c51b973563a4a99f0ce'
         }
+
         function rnd(n) {
             return Math.floor(Math.random(new Date().getSeconds()) * n)
         }
+
         function $(s) {
             return document.getElementById(s)
         }
+
         function showQuotes(withLimit = true) {
             var item = quotes[rnd(quotes.length)]
 
             let next = withLimit ? ++count <= limit : true
             if (next) {
                 $('tips').innerHTML = item
-                setTimeout(function () { showQuotes(withLimit) }, (3000 + item.length * 100 + rnd(5000)))
+                setTimeout(function() {
+                    showQuotes(withLimit)
+                }, (3000 + item.length * 100 + rnd(5000)))
             } else {
                 redirect(pages['home'])
             }
         }
+
         function redirect(url) {
-            $('tips').innerHTML = 'Loading...'
+            $('tips').innerHTML = 'loading...'
             if (url) {
                 location.href = url
             } else {
@@ -146,31 +151,38 @@
                 }
             }
         }
-        window.onload = function () {
+        window.onload = function() {
             if (!redirect()) {
-                showQuotes()
+                showQuotes(false)
             }
         }
     })()
 </script>
+
 <body>
     <a href="?home" id="thinking" hidefocus="true" onfocus="blur()">Zenver Tao</a>
     <div id="nav">
-        <a href="?about">About</a>
-        <a href="?apps">Apps</a>
-        <a href="?timegoes">时流记</a>
+        <a href="?about">Bio</a>
+        <a href="?apps">Picks</a>
+        <a href="?timegoes">TimeGoes</a>
     </div>
     <div id="tips">Loading...</div>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0MPVMZKL2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'G-K0MPVMZKL2');
     </script>
     <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        window.va = window.va || function() {
+            (window.vaq = window.vaq || []).push(arguments);
+        };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>
