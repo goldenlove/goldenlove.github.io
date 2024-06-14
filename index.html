@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>陀振华 · Zenver Tao</title>
+    <title>陀振华 · ZenverTao</title>
     <meta charset="utf-8">
     <meta id="robots" content="all" />
     <meta id="author" content="ZenverTao" />
@@ -74,12 +74,11 @@
     </style>
 </head>
 <script>
-    (function() {
+    (function () {
         var count = 0
         var limit = rnd(3) + 1
         var quotes = [
             '时间不会停止，但可以被记录',
-            '如果你不忙着求生，你就在忙着等死',
             '只有那些疯狂到以为自己能够改变世界的人才能真正改变世界',
             '简约、减少分心的因素，是一家商店成功的关键，对于产品来说也是一样',
             '要成为尝百草的人，然后你就能百毒不侵了，这是对人生和意志的一种磨练！',
@@ -102,7 +101,6 @@
             '人的烦恼就12个字、放不下，想不开，看不透，忘不了',
             '想痛苦，向前看！想幸福，向后看！想郁闷，向上看！想满足，向下看！站着的，想想躺着的！活着的，想想离去的！',
             '出问题先从自己身上找原因，别一便秘就怪地球没引力！',
-            '知识就像内裤，看不见，却很重要！',
             '时间就像卷笔刀，我们都是铅笔有的卷断了芯，有的削尖了头，有的花边很漂亮社会地位最高的是一种叫2B的笔，只有他们能做选择题...',
             '珍惜一袋米，还不如去多开垦一块地来得实在！',
             '当你眼里只有一个方向，全世界都会为你让路',
@@ -113,7 +111,8 @@
             home: 'https://zenver.notion.site/',
             about: 'https://zenver.notion.site/e445f977c95c4a0b82606b24897a74a0',
             apps: 'https://zenver.notion.site/My-Picks-App-38b3bfc3e5ef42ac889e1c5f5d645f20',
-            timegoes: 'https://zenver.notion.site/c7c11c5c4ef34c51b973563a4a99f0ce'
+            timegoes: 'https://zenver.notion.site/c7c11c5c4ef34c51b973563a4a99f0ce',
+            timegoing: 'https://zenver.notion.site/c7c11c5c4ef34c51b973563a4a99f0ce'
         }
 
         function rnd(n) {
@@ -130,7 +129,7 @@
             let next = withLimit ? ++count <= limit : true
             if (next) {
                 $('tips').innerHTML = item
-                setTimeout(function() {
+                setTimeout(function () {
                     showQuotes(withLimit)
                 }, (3000 + item.length * 100 + rnd(5000)))
             } else {
@@ -151,7 +150,7 @@
                 }
             }
         }
-        window.onload = function() {
+        window.onload = function () {
             if (!redirect()) {
                 showQuotes(false)
             }
@@ -164,21 +163,11 @@
     <div id="nav">
         <a href="?about">Bio</a>
         <a href="?apps">Picks</a>
-        <a href="?timegoes">TimeGoes</a>
+        <a href="?timegoing">TimeGoing</a>
     </div>
     <div id="tips">Loading...</div>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0MPVMZKL2"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-K0MPVMZKL2');
-    </script>
-    <script>
-        window.va = window.va || function() {
+        window.va = window.va || function () {
             (window.vaq = window.vaq || []).push(arguments);
         };
     </script>
