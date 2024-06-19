@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="mask-icon" href="./icon.svg" color="#fff">
     <link rel="icon" type="image/png" sizes="32x32" href="./icon.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="./icon.svg">    
+    <link rel="icon" type="image/png" sizes="16x16" href="./icon.svg">
     <style>
         body {
             margin: 0px;
@@ -109,11 +109,9 @@
         ]
 
         var pages = {
-            home: 'https://zenver.notion.site/',
             about: 'https://zenver.notion.site/e445f977c95c4a0b82606b24897a74a0',
             apps: 'https://zenver.notion.site/My-Picks-App-38b3bfc3e5ef42ac889e1c5f5d645f20',
             timegoes: 'https://zenver.notion.site/c7c11c5c4ef34c51b973563a4a99f0ce',
-            timegoing: 'https://timegoing.vercel.app/'
         }
 
         function rnd(n) {
@@ -124,15 +122,8 @@
             return document.getElementById(s)
         }
 
-        window.showQuotes = (withLimit = true) => {
-            var item = quotes[rnd(quotes.length)]
-
-            let next = withLimit ? ++count <= limit : true
-            if (next) {
-                $('tips').innerHTML = item
-            } else {
-                redirect(pages['home'])
-            }
+        window.showQuotes = () => {
+            $('tips').innerHTML = quotes[rnd(quotes.length)]
         }
 
         function redirect(url) {
@@ -151,10 +142,10 @@
 
         window.onload = function () {
             if (!redirect()) {
-                showQuotes(false)
+                showQuotes()
                 document.querySelectorAll("a").forEach((item) => {
                     item.onmouseenter = () => {
-                        showQuotes(false)
+                        showQuotes()
                     }
                 })
             }
@@ -164,23 +155,23 @@
 
 <body>
 
-    <a href="?home" class="thinking" hidefocus="true" onfocus="blur()">
+    <a href="https://zenver.notion.site" class="thinking" hidefocus="true" onfocus="blur()">
         <img src="./realize.png" alt="悟" />
     </a>
     <div class="nav">
         <a href="?about">Bio</a>
         <a href="?apps">Picks</a>
-        <a href="?timegoing">TimeGoing</a>
+        <a href="https://timegoing.vercel.app">TimeGoing</a>
     </div>
 
     <div id="tips">Loading...</div>
-    
+
     <div class="nav reverse-blur">
         <a href="?about">Bio</a>
         <a href="?apps">Picks</a>
-        <a href="?timegoing">TimeGoing</a>
+        <a href="https://timegoing.vercel.app">TimeGoing</a>
     </div>
-    <a href="?home" class="thinking reverse-blur" hidefocus="true" onfocus="blur()">
+    <a href="https://zenver.notion.site" class="thinking reverse-blur" hidefocus="true" onfocus="blur()">
         <img src="./realize.png" alt="悟" />
     </a>
 
