@@ -47,19 +47,20 @@
         .thinking {
             display: block;
             margin: 3.5rem auto;
-            width: 250px;
+            width: 344px;
             height: 344px;
         }
 
         #tips {
             color: #00dd01;
-            padding: 0.8rem;
+            padding: .5rem;
             background-color: #000;
             font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
             font-size: medium;
         }
 
         .nav {
+            position: relative;
             margin: 1.5rem auto;
         }
 
@@ -67,9 +68,29 @@
             margin: 0 1rem;
         }
 
-        .reverse-blur {
+        .reverse-blur,
+        .mirror-nav {
             transform: scaleY(-1);
+            opacity: .5;
+        }
+
+        .reverse-blur {
             filter: blur(10px);
+        }
+
+        .original-nav {
+            margin-bottom: 3px;
+        }
+
+        .mirror-nav {
+            filter: blur(2px);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .mirror-hover {
+            color: #00dd01 !important;
         }
     </style>
 </head>
@@ -122,12 +143,7 @@
             return document.getElementById(s)
         }
 
-        window.showQuotes = () => {
-            $('tips').innerHTML = quotes[rnd(quotes.length)]
-        }
-
         function redirect(url) {
-            $('tips').innerHTML = 'loading...'
             if (url) {
                 location.href = url
             } else {
@@ -140,39 +156,59 @@
             }
         }
 
+        window.showTips = () => {
+            alert(quotes[rnd(quotes.length)])
+        }
+
         window.onload = function () {
-            if (!redirect()) {
-                showQuotes()
-                document.querySelectorAll("a").forEach((item) => {
-                    item.onmouseenter = () => {
-                        showQuotes()
-                    }
+            if (redirect()) return
+
+            document.querySelectorAll(".nav a").forEach((item) => {
+                item.onclick = showTips
+            })
+
+            const originalLinks = document.querySelectorAll('.original-nav a');
+            const mirrorLinks = document.querySelectorAll('.mirror-nav a');
+
+            originalLinks.forEach((link, index) => {
+                link.addEventListener('mouseenter', () => {
+                    mirrorLinks[index].classList.add('mirror-hover');
                 })
-            }
+                link.addEventListener('mouseleave', () => {
+                    mirrorLinks[index].classList.remove('mirror-hover');
+                })
+            })
+
+            mirrorLinks.forEach((link, index) => {
+                link.addEventListener('mouseenter', () => {
+                    originalLinks[index].classList.add('mirror-hover');
+                })
+                link.addEventListener('mouseleave', () => {
+                    originalLinks[index].classList.remove('mirror-hover');
+                })
+            })
         }
     })()
 </script>
 
 <body>
-
     <a href="https://zenver.notion.site" class="thinking" hidefocus="true" onfocus="blur()">
-        <img src="./realize.png" alt="悟" />
+        <img src="./realize.png" alt="悟" width="344" height="344" />
     </a>
     <div class="nav">
-        <a href="?about">Bio</a>
-        <a href="?apps">Picks</a>
-        <a href="https://timegoing.vercel.app">TimeGoing</a>
-    </div>
-
-    <div id="tips">Loading...</div>
-
-    <div class="nav reverse-blur">
-        <a href="?about">Bio</a>
-        <a href="?apps">Picks</a>
-        <a href="https://timegoing.vercel.app">TimeGoing</a>
+        <div class="original-nav">
+            <a href="?about">Bio</a>
+            <a href="?apps">Picks</a>
+            <a href="https://timegoing.vercel.app">TimeGoing</a>
+        </div>
+        <div class="mirror-nav">
+            <a href="?about">Bio</a>
+            <a href="?apps">Picks</a>
+            <a href="https://timegoing.vercel.app">TimeGoing</a>
+        </div>
     </div>
     <a href="https://zenver.notion.site" class="thinking reverse-blur" hidefocus="true" onfocus="blur()">
-        <img src="./realize.png" alt="悟" />
+        <img src="./realize.png" alt="悟" width="344" height="344" />
     </a>
 
     <script>
